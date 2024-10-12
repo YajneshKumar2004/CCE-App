@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+<!--    tools:showIn = "navigation_view">-->
+    <group>
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_icon"
+            android:title="Home"/>
+    </group>
+    <group>
+        <item
+            android:id="@+id/nav_events"
+            android:icon="@drawable/event_icon"
+            android:title="Events"/>
+        <item
+            android:id="@+id/nav_cgpa_calculator"
+            android:icon="@drawable/cgpa_calculator_icon"
+            android:title="SGPA Calculator"/>
+        <item
+            android:id="@+id/nav_access"
+            android:icon="@drawable/access_icon"
+            android:title="ACCESS"/>
+        <item
+            android:id="@+id/nav_placement"
+            android:icon="@drawable/placement_icon"
+            android:title="Placement"/>
+    </group>
+
+    <item android:title="Notes">
+        <menu>
+            <item
+                android:id="@+id/sem1"
+                android:icon="@drawable/notes_icon"
+                android:title="Sem-1"/>
+            <item
+                android:id="@+id/sem2"
+                android:icon="@drawable/notes_icon"
+                android:title="Sem-2"/>
+            <item
+                android:id="@+id/sem3"
+                android:icon="@drawable/notes_icon"
+                android:title="Sem-3"/>
+            <item
+                android:id="@+id/sem4"
+                android:icon="@drawable/notes_icon"
+                android:title="Sem-4"/>
+            <item
+                android:id="@+id/sem5"
+                android:icon="@drawable/notes_icon"
+                android:title="Sem-5"/>
+            <item
+                android:id="@+id/sem6"
+                android:icon="@drawable/notes_icon"
+                android:title="Sem-6"/>
+            <item
+                android:id="@+id/sem7"
+                android:icon="@drawable/notes_icon"
+                android:title="Sem-7"/>
+            <item
+                android:id="@+id/sem8"
+                android:icon="@drawable/notes_icon"
+                android:title="Sem-8"/>
+        </menu>
+    </item>
+
+
+</menu>
