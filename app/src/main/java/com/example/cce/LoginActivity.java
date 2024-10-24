@@ -1,5 +1,6 @@
 package com.example.cce;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -89,14 +90,20 @@ public class LoginActivity extends AppCompatActivity {
                             //Log.d(TAG, "signInWithEmail:success");
                             Toast.makeText(LoginActivity.this, "Login  successfull", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
-                            //updateUI(user);
+                            updateUI();
                         } else {
                             //Log.w(TAG, "signInWithEmail:failure", task.getException());
                             Toast.makeText(LoginActivity.this, "Login not successful", Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
+
                         }
                     }
                 });
+    }
+
+    private void updateUI(){
+        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+        startActivity(intent);
+
     }
 
 }
