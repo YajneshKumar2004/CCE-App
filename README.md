@@ -32,8 +32,11 @@ This Android app is developed for the **CCE Department** and the **ACCESS** bran
 
 ## Screenshots
 <p float="left">
-   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-1.jpg" width="200"/>
-   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-2.jpg" width="200"/>
+   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-1.jpg" width="195"/>
+   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-3.jpg" width="195"/>
+   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-4.jpg" width="195"/>
+   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-5.jpg" width="195"/>
+   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-6.jpg" width="195"/>
 </p>
 
 
