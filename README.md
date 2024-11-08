@@ -26,7 +26,7 @@ This Android app is developed for the **CCE Department** and the **ACCESS** bran
 5. **Upcoming Events:**
    - Stay in the loop with a calendar of upcoming department events and activities.
   
-## Preview
+<!--   ## Preview   -->
 
 <!--   <img src="https://github.com/dev-aniketj/Weather-App/blob/master/SS/gif1.gif" width="200"/>   -->
 
