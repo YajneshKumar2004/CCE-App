@@ -2,16 +2,25 @@
 
 ## Overview
 
+<p float="left">
+   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-1.jpg" width="195"/>
+   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-3.jpg" width="195"/>
+   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-4.jpg" width="195"/>
+   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-6.jpg" width="195"/>
+</p>
+
 This Android app is developed for the **CCE Department** and the **ACCESS** branch committee to assist students with accessing valuable resources and information. The app provides the following features:
-- **Placement Data:** View previous year placement statistics.
+- **Placement Details:** View previous year placement statistics.
 - **Notes & Study Resources:** Access materials for academic support.
 - **Committee Members:** Learn about the current members of the ACCESS committee, including the president, vice-president, and more.
 - **SGPA Calculator:** Calculate your SGPA (Semester Grade Point Average).
 - **Upcoming Events:** Stay updated on important upcoming events in the department.
 
+---
+
 ## Features
 
-1. **Placement Data:**
+1. **Placement Details:**
    - View detailed placement data for previous years to help you prepare for future opportunities.
 
 2. **Notes & Study Resources:**
@@ -25,22 +34,12 @@ This Android app is developed for the **CCE Department** and the **ACCESS** bran
 
 5. **Upcoming Events:**
    - Stay in the loop with a calendar of upcoming department events and activities.
-  
-<!--   ## Preview   -->
 
-<!--   <img src="https://github.com/dev-aniketj/Weather-App/blob/master/SS/gif1.gif" width="200"/>   -->
-
-## Screenshots
-<p float="left">
-   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-1.jpg" width="195"/>
-   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-3.jpg" width="195"/>
-   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-4.jpg" width="195"/>
-   <img src="https://github.com/YajneshKumar2004/CCE-Department-App/blob/master/app/src/main/Screenshot-6.jpg" width="195"/>
-</p>
-
+---
 
 ## Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/YajneshKumar2004/CCE-Department-App
+---
