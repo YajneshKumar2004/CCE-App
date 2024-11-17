@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 <!--    tools:showIn = "navigation_view">-->
     <group>
@@ -9,10 +10,6 @@
             android:title="Home"/>
     </group>
     <group>
-        <item
-            android:id="@+id/nav_events"
-            android:icon="@drawable/event_icon"
-            android:title="Events"/>
         <item
             android:id="@+id/nav_cgpa_calculator"
             android:icon="@drawable/cgpa_calculator_icon"
@@ -63,6 +60,9 @@
                 android:title="Sem-8"/>
         </menu>
     </item>
+    <item
+        android:id="@+id/logout"
+        android:title="LogOut" />
 
 
 </menu>

@@ -53,9 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
                     replaceFragment(new home());
-                } else if (id == R.id.nav_events) {
-                    Toast.makeText(MainActivity.this, "Events", Toast.LENGTH_SHORT).show();
-                    replaceFragment(new events());
                 } else if (id == R.id.nav_cgpa_calculator) {
                     Toast.makeText(MainActivity.this, "CGPA Calculator", Toast.LENGTH_SHORT).show();
                     replaceFragment(new cgpa_calculator());
@@ -73,13 +70,13 @@ public class MainActivity extends AppCompatActivity {
                     goToUrl("https://drive.google.com/drive/folders/1P_pjnLvhZCojqIGk_ihXXBhdO9_WzL-T?usp=drive_link");
                 } else if (id == R.id.sem3) {
                     Toast.makeText(MainActivity.this, "Opening Sem-3", Toast.LENGTH_SHORT).show();
-                    goToUrl("https://drive.google.com/drive/folders/1cKY86z10pLSf7FUpFUwm6qMB34oPrsIV?usp=drive_link");
+                    goToUrl("https://drive.google.com/drive/folders/1-6Bc155AMdje4_SxJTxinwSmEC9aXthG");
                 } else if (id == R.id.sem4) {
                     Toast.makeText(MainActivity.this, "Opening Sem-4", Toast.LENGTH_SHORT).show();
-                    goToUrl("https://drive.google.com/drive/folders/1hQIrsaI6aHfss9psUO-7jv3kLNLPuSu0?usp=drive_link");
+                    goToUrl("https://drive.google.com/drive/folders/1zgQF-rNONEzJhxmK0stbc0pv_39QG4k1");
                 } else if (id == R.id.sem5) {
                     Toast.makeText(MainActivity.this, "Opening Sem-5", Toast.LENGTH_SHORT).show();
-                    goToUrl("https://drive.google.com/drive/folders/1hz2GT6Xwydq5ywCxlteCaAlHBX2GtymA?usp=drive_link");
+                    goToUrl("https://drive.google.com/drive/folders/18IvkHqbxYbWV0aR0642AmRvfwEddQtXi");
                 } else if (id == R.id.sem6) {
                     Toast.makeText(MainActivity.this, "Opening Sem-6", Toast.LENGTH_SHORT).show();
                     goToUrl("https://drive.google.com/drive/folders/1dS9jail-EK_wEVj79BlF383PVmU3ygCQ?usp=drive_link");
@@ -89,7 +86,13 @@ public class MainActivity extends AppCompatActivity {
                 } else if (id == R.id.sem8) {
                     Toast.makeText(MainActivity.this, "Opening Sem-8", Toast.LENGTH_SHORT).show();
                     goToUrl("https://drive.google.com/drive/folders/1-DKnr-xAW8aseZS7NaYj1zrbRLW2XdOS?usp=drive_link");
-                } else{
+                }
+                else if(id == R.id.logout){
+                    Toast.makeText(MainActivity.this, "Logging out...", Toast.LENGTH_SHORT).show();
+                    logout();
+
+                }
+                else{
                     return false;
                 }
                 return true;
@@ -115,5 +118,10 @@ public class MainActivity extends AppCompatActivity {
         catch (Exception e){
             Toast.makeText(this, "No website linked", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void logout(){
+        Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+        startActivity(intent);
     }
 }

@@ -41,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 createAccount(email.getText().toString(), password.getText().toString());
+                email.setText("");
+                password.setText("");
             }
         });
 
@@ -74,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                             //updateUI(user);
                         } else {
                             //Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Account not created successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Error in creating account", Toast.LENGTH_SHORT).show();
                             //updateUI(null);
                         }
                     }
@@ -93,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                             updateUI();
                         } else {
                             //Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Login not successful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "incorrect Password or UserMail", Toast.LENGTH_SHORT).show();
 
                         }
                     }
