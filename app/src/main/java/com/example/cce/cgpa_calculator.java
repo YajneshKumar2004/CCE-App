@@ -12,10 +12,6 @@ import android.widget.Toast;
 
 public class cgpa_calculator extends Fragment {
 
-    public cgpa_calculator() {
-        // Required empty public constructor
-    }
-
     Button button;
     EditText sub1_credit, sub2_credit, sub3_credit, sub4_credit, sub5_credit, sub6_credit, sub7_credit, sub8_credit;
     EditText sub1_grade, sub2_grade, sub3_grade, sub4_grade, sub5_grade, sub6_grade, sub7_grade, sub8_grade;
