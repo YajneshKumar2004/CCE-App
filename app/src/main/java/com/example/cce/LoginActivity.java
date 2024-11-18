@@ -22,12 +22,12 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
-    EditText email,password;
+    EditText email, password;
     Button login, signUp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
@@ -41,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 createAccount(email.getText().toString(), password.getText().toString());
+                email.setText("");
+                password.setText("");
             }
         });
 
@@ -50,9 +52,6 @@ public class LoginActivity extends AppCompatActivity {
                 signIn(email.getText().toString(), password.getText().toString());
             }
         });
-
-
-
     }
 
     @Override
@@ -71,11 +70,10 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, "User Created Successfully", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
-                            //updateUI(user);
                         } else {
-                            //Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Account not created successfully", Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
+
+                            Toast.makeText(LoginActivity.this, "Error in creating account", Toast.LENGTH_SHORT).show();
+
                         }
                     }
                 });
@@ -87,21 +85,18 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            //Log.d(TAG, "signInWithEmail:success");
-                            Toast.makeText(LoginActivity.this, "Login  successfull", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Login successfull", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI();
                         } else {
-                            //Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Login not successful", Toast.LENGTH_SHORT).show();
-
+                            Toast.makeText(LoginActivity.this, "incorrect Password or UserMail", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
 
-    private void updateUI(){
-        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+    private void updateUI() {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
 
     }

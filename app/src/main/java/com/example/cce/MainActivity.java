@@ -1,5 +1,6 @@
 package com.example.cce;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
@@ -21,6 +23,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -49,13 +52,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 drawerLayout.closeDrawer(GravityCompat.START);
-                if(id == R.id.nav_home)
-                {
+                if (id == R.id.nav_home) {
                     Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
                     replaceFragment(new home());
-                } else if (id == R.id.nav_events) {
-                    Toast.makeText(MainActivity.this, "Events", Toast.LENGTH_SHORT).show();
-                    replaceFragment(new events());
                 } else if (id == R.id.nav_cgpa_calculator) {
                     Toast.makeText(MainActivity.this, "CGPA Calculator", Toast.LENGTH_SHORT).show();
                     replaceFragment(new cgpa_calculator());
@@ -73,13 +72,13 @@ public class MainActivity extends AppCompatActivity {
                     goToUrl("https://drive.google.com/drive/folders/1P_pjnLvhZCojqIGk_ihXXBhdO9_WzL-T?usp=drive_link");
                 } else if (id == R.id.sem3) {
                     Toast.makeText(MainActivity.this, "Opening Sem-3", Toast.LENGTH_SHORT).show();
-                    goToUrl("https://drive.google.com/drive/folders/1cKY86z10pLSf7FUpFUwm6qMB34oPrsIV?usp=drive_link");
+                    goToUrl("https://drive.google.com/drive/folders/1-6Bc155AMdje4_SxJTxinwSmEC9aXthG");
                 } else if (id == R.id.sem4) {
                     Toast.makeText(MainActivity.this, "Opening Sem-4", Toast.LENGTH_SHORT).show();
-                    goToUrl("https://drive.google.com/drive/folders/1hQIrsaI6aHfss9psUO-7jv3kLNLPuSu0?usp=drive_link");
+                    goToUrl("https://drive.google.com/drive/folders/1zgQF-rNONEzJhxmK0stbc0pv_39QG4k1");
                 } else if (id == R.id.sem5) {
                     Toast.makeText(MainActivity.this, "Opening Sem-5", Toast.LENGTH_SHORT).show();
-                    goToUrl("https://drive.google.com/drive/folders/1hz2GT6Xwydq5ywCxlteCaAlHBX2GtymA?usp=drive_link");
+                    goToUrl("https://drive.google.com/drive/folders/18IvkHqbxYbWV0aR0642AmRvfwEddQtXi");
                 } else if (id == R.id.sem6) {
                     Toast.makeText(MainActivity.this, "Opening Sem-6", Toast.LENGTH_SHORT).show();
                     goToUrl("https://drive.google.com/drive/folders/1dS9jail-EK_wEVj79BlF383PVmU3ygCQ?usp=drive_link");
@@ -89,7 +88,11 @@ public class MainActivity extends AppCompatActivity {
                 } else if (id == R.id.sem8) {
                     Toast.makeText(MainActivity.this, "Opening Sem-8", Toast.LENGTH_SHORT).show();
                     goToUrl("https://drive.google.com/drive/folders/1-DKnr-xAW8aseZS7NaYj1zrbRLW2XdOS?usp=drive_link");
-                } else{
+                } else if (id == R.id.logout) {
+                    Toast.makeText(MainActivity.this, "Logging out...", Toast.LENGTH_SHORT).show();
+                    logout();
+
+                } else {
                     return false;
                 }
                 return true;
@@ -98,22 +101,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // code to replace the fragment in activity_main.xml
-    private void replaceFragment(Fragment fragment)
-    {
+    private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit();
     }
 
-    void goToUrl(String s)
-    {
+    void goToUrl(String s) {
         try {
             Uri uri = Uri.parse(s);
             startActivity(new Intent(Intent.ACTION_VIEW, uri));
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             Toast.makeText(this, "No website linked", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void logout() {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+        dialog.setTitle("Log Out");
+        dialog.setMessage("Do you really want to log out");
+        dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                FirebaseAuth.getInstance().signOut();
+
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                startActivity(intent);
+            }
+        });
+
+        dialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
 }
