@@ -24,7 +24,7 @@ This Android app is developed for the **CCE Department** and the **ACCESS** bran
    - View detailed placement data for previous years to help you prepare for future opportunities.
 
 2. **Notes & Study Resources:**
-   - Access notes and study materials to aid in your academic journey.
+   - Access notes and study materials of all semesters to aid in your academic journey.
 
 3. **Committee Members:**
    - Get to know the current leaders and members of the ACCESS branch committee.
